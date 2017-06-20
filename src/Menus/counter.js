@@ -1,6 +1,6 @@
 import React from 'react';
-import {observer} from "mobx-react";
-import {observable} from "mobx";
+// import {observer} from "mobx-react";
+// import {observable} from "mobx";
 // import observer from 'mobx-observer';
 
 // import {
@@ -20,17 +20,17 @@ import {observable} from "mobx";
 // 	FormControl
 // } from 'react-bootstrap'
 
-const appState = observable({
-	count: 0
-});
+// const appState = observable({
+// 	count: 0
+// });
 
-appState.increment = function () {
-	this.count++;
-}
+// appState.increment = function () {
+// 	this.count++;
+// }
 
-appState.decrement = function () {
-	this.count--;
-}
+// appState.decrement = function () {
+// 	this.count--;
+// }
 
 
 
