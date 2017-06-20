@@ -1,0 +1,111 @@
+nav {
+  background-color: #404041;
+  overflow: hidden;
+  padding: 1em;
+}
+
+.Navigation {
+
+}
+
+.fa-bars {
+  background-color: #404041;
+  border-style: none;
+  color: #d3d4d6;
+}
+nav a {
+  color: #d3d4d6;
+  text-decoration: none;
+  list-style: none;
+}
+nav a:visited {
+  color: #d3d4d6;
+  text-decoration: none;
+}
+nav .navWide {
+  display: none;
+  margin: 0 auto;
+}
+nav .navWide .wideDiv {
+  text-align: center;
+}
+nav .navWide .wideDiv li {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 2em;
+}
+nav .navNarrow i {
+  float: left;
+  cursor: pointer;
+  color: #d3d4d6;
+}
+nav .navNarrow .narrowLinks {
+  display: none;
+}
+nav .navNarrow .narrowLinks li {
+  text-decoration: none;
+  display: block;
+  float: left;
+  clear: left;
+  padding: 0.5em 0;
+}
+
+@media (min-width: 480px) {
+  nav .navWide {
+    display: block;
+  }
+  nav .navNarrow {
+    display: none;
+  }
+}
+
+.NavItems {
+  padding: 8px 0 5px 0;
+}
+
+.NavItems:first-child {
+  padding-top: 1em;
+}
+
+.Footer {
+  height: 10em;
+  background-color: #404041; 
+}
+
+.Footer a {
+  color: #d3d4d6;
+  text-decoration: none;
+}
+
+.Footer li {
+  padding: .5em;
+  display: inline-flex;
+}
+
+.Newsletter {
+  color: #d3d4d6;
+  text-align: center;
+  padding: 10px;
+  display: block;
+}
+
+.Newsletter p {
+  padding: 0;
+  margin: 0;
+  padding-top: 12px;
+}
+
+.NewsButton {
+  background-color: #4c4c4e;
+  color: #d3d4d6;
+  padding: 3px;
+  margin: 5px 5px 5px 0;
+  border-style: none;
+}
+
+.Footer-text {
+  margin-top: 10px;
+  padding: .35em;
+  color: #d3d4d6;
+  text-align: center;
+}

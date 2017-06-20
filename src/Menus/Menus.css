@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+@font-face {
+    font-family: 'TrashHand';
+    src: url('TrashHand-webfont.woff') format('woff'),
+    	url('TrashHand-webfont.eot') format('embedded-opentype'),	
+    	url('TrashHand-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1, h2, h3 {
+	padding: 20px;
+	color: #000;
+	text-align: center;
+	font-family: TrashHand;
+}
+
+p {
+	text-align: center;
+	font-family: OpenSans;
+}
+
+li {
+	text-align: center;
+	list-style-type: none;
+}
+
+.MainLogo {
+	
+}
+
+.AppMenus p {
+	font-family: Open Sans;
+	text-align: center;
+}
+
+.LinkText {
+	padding: 20px;
+	margin: 10px;
+	text-decoration: none;
+	color: #FFF;
+}
+
+.Mediteranian {
+	color: #FF0694;
+}
+
+.sotb {
+	color: #FF741C;
+}
+
+.tuk {
+	color: #0A9FFF;
+}
+
+.tcar {
+	color: #AC05B2;
+	margin-bottom: 20px;
+}
+
+.MenuButton img {
+	height: 60px;
+	width: 30vw;
+}
+
+.MainMenuLists {
+	padding: 10px;
+	margin: 15px;
+	text-decoration: none;
+	border-style: none;
+	box-shadow: 10px;
+}
+
+.MainMenuLists li:hover {
+	text-decoration: none;
+}
+
+.ListCols {
+	text-align: center;
+	/*margin: 10px;
+	padding: 20px;*/
+}
+
+.ListCols p {
+	text-align: center;
+}
+
+.MenuList {
+	color: #000;
+}
+
+.Marker .Linktext {
+	color: #000;
+	text-align: center;
+}
