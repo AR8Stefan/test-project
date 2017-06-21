@@ -34,7 +34,7 @@ class App extends Component {
         <div>
           <div className='MainMap'>
             <GoogleMapReact
-            apiKey='AIzaSyCQI7dL5HaXfGrJvH5YKelWH1wpNQTDi0I'
+            apiKey="AIzaSyCQI7dL5HaXfGrJvH5YKelWH1wpNQTDi0I";
             defaultCenter={{lat: 34.052235, lng: -118.243683}}
             defaultZoom={9}
             >
