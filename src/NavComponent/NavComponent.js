@@ -105,7 +105,6 @@ import Caribbean from '../Menus/the_caribbean.js'
 				      	<Col className="Footer-text">
 							<li><a href="https://au.pinterest.com/search/pins/?q=food&rs=typed&term_meta[]=food%7Ctyped">Pinterest</a></li>
 							<li><Link to="/contact">Contact</Link></li>
-							<li>Link</li>
 						</Col>
 
 				    </FormGroup>
