@@ -34,7 +34,7 @@ class App extends Component {
         <div>
           <div className='MainMap'>
             <GoogleMapReact
-            Key={process.env.GOOGLE_MAPS_API_KEY}
+            apiKey={process.env.GOOGLE_MAPS_API_KEY}
             defaultCenter={{lat: 34.052235, lng: -118.243683}}
             defaultZoom={9}
             >
