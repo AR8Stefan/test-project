@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 import GoogleMapReact from 'google-map-react';
 import GoogleMapMarkers from 'google-map-react';
 
-import MenuLists from './Menus/MainMenu.js'
+import MenuLists from './Menus/MainMenu.js';
+require('dotenv').config();
 // import Mediteranian from './Menus/the_mediteranian.js'
 // import SouthBorder from './Menus/south_of_the_border.js'
 // import Uk from './Menus/the_uk.js'
@@ -29,12 +30,13 @@ class App extends Component {
     }
   }
   render() {
+    console.log(process.env);
     return (
       <div>
         <div>
           <div className='MainMap'>
             <GoogleMapReact
-            apiKey={process.env.GOOGLE_MAPS_API_KEY}
+            apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
             defaultCenter={{lat: 34.052235, lng: -118.243683}}
             defaultZoom={9}
             >
