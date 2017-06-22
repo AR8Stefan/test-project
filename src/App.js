@@ -3,7 +3,7 @@ import './App.css';
 import { Button } from 'react-bootstrap'
 // import NavComponent from './NavComponent/NavComponent.js'
 import { Link } from 'react-router-dom'
-import GoogleMapReact from 'google-map-react';
+import GoogleMap from 'google-map-react';
 import GoogleMapMarkers from 'google-map-react';
 
 import MenuLists from './Menus/MainMenu.js';
@@ -30,13 +30,13 @@ class App extends Component {
     }
   }
   render() {
-    
+    console.log(process.env);
     return (
       <div>
         <div>
           <div className='MainMap'>
-            <GoogleMapReact
-            
+            <GoogleMap
+            apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
             defaultCenter={{lat: 34.052235, lng: -118.243683}}
             defaultZoom={9}
             >
@@ -66,7 +66,7 @@ class App extends Component {
               text={'The Caribbean'}
             />
 
-            </GoogleMapReact>
+            </GoogleMap>
 
           </div>
 
