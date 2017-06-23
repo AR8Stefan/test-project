@@ -75,7 +75,7 @@ class App extends Component {
 
         </div>
 
-      <MenuLists />
+      
 
       </div>
     );

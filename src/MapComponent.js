@@ -13,7 +13,7 @@ import axios from "axios";
 //   InfoWindow,
 //   Marker
 // } from "react-google-maps";
-
+import MenuLists from './Menus/MainMenu.js';
 import InitialMap from './MyMap.js'
 
 export default class MainMap extends Component {
@@ -36,16 +36,20 @@ export default class MainMap extends Component {
 
 	render() {
 		return (
-			<div style={{height: "100%"}}>
-				<InitialMap
-					containerElement={
-						<div style={{ height: '50vh', width: 'auto' }} />
-					}
-					mapElement={
-						<div style={{ height: '100vh', width: '100vw' }} />
-					}
-				/>
+			<div>
+				<div style={{height: "50%"}}>
+					<InitialMap
+						containerElement={
+							<div style={{ height: '50vh', width: 'auto' }} />
+						}
+						mapElement={
+							<div style={{ height: '50vh', width: '100vw' }} />
+						}
+					/>
 
+				</div>
+
+				<MenuLists />
 			</div>
 		);
 	}

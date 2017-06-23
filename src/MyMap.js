@@ -17,7 +17,7 @@ import './App.css';
     return(
       <GoogleMap 
         ref={props.onMapLoad}
-        defaultZoom={8}
+        defaultZoom={10}
         defaultCenter={{lat: 34.052235,
           lng: -118.243683}}
       >

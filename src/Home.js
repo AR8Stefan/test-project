@@ -5,8 +5,10 @@ import MainMap from './MapComponent.js'
 
 const Home = () => {
 	return <div>
-		<App></App>
-		<MainMap></MainMap>
+		<div>
+			<MainMap>
+			</MainMap>
+		</div>
 
 	</div>
 }
