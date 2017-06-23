@@ -30,3 +30,25 @@
             />
 
             </GoogleMap>
+
+
+
+
+
+
+
+
+
+            {props.markers.map((marker, index ) => (
+            <Marker
+              key={index}
+              position={marker.position}
+              onClick={() => props.onMarkerClick(marker)}
+            >
+              {marker.showInfo && (
+                <InfoWindow>
+                   <div id="InfoWindow"></div>
+                </InfoWindow>
+              )}
+            </Marker>
+          ))}

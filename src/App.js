@@ -9,11 +9,6 @@ import GoogleMapMarkers from 'google-map-react';
 
 import MenuLists from './Menus/MainMenu.js';
 require('dotenv').config();
-// import Mediteranian from './Menus/the_mediteranian.js'
-// import SouthBorder from './Menus/south_of_the_border.js'
-// import Uk from './Menus/the_uk.js'
-// import FarEast from './Menus/the_far_east.js'
-// import Caribbean from './Menus/the_caribbean.js'
 
 
 const AnyReactComponent = ({text}) => (
