@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap'
 // import NavComponent from './NavComponent/NavComponent.js'
 import { Link } from 'react-router-dom'
 import GoogleMap from 'google-map-react';
-import google from 'google-map-react';
+// import google from 'google-map-react';
 import GoogleMapMarkers from 'google-map-react';
 
 import MenuLists from './Menus/MainMenu.js';
@@ -23,19 +23,7 @@ const AnyReactComponent = ({text}) => (
 
 );
 
-class initMap {
-  initMap() {
-    var uluru = {lat: -25.363, lng: 131.044};
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
-      center: uluru
-    });
-    // var marker = new google.maps.Marker({
-    //   position: uluru,
-    //   map: map
-    // });
-  }
-};
+
 
 class App extends Component {
   constructor(props) {
@@ -44,10 +32,6 @@ class App extends Component {
       map: []
     }
   }
-
-  // componentDidMount() {
-  //   this.initMap();
-  // };
 
   render() {
     return (

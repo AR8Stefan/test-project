@@ -27,6 +27,7 @@ import Home from '../Home.js'
 import MainMenu from '../Menus/MainMenu.js'
 import Order from '../Order.js'
 import Contact from '../Contact.js'
+// import MyMap from '../MyMap'
 
 import Mediteranian from '../Menus/the_mediteranian.js'
 import SouthBorder from '../Menus/south_of_the_border.js'
@@ -38,12 +39,11 @@ import Caribbean from '../Menus/the_caribbean.js'
 
 //	<img className="MainLogo" src="http://res.cloudinary.com/stefank9/image/upload/v1496907626/logo_k0klyh.svg" alt="" />
 
-	const NavComponent  = () => (
+	const NavComponent = () => (
 <Router>
 	<div>
 
 	  	<Navbar className="Navigation">
-
   		   	<Nav className="navWide">
     			<div className="wideDiv">
 		        	<NavItem onClick={this.burgerToggle}><Link to="/">Home</Link></NavItem>
@@ -72,7 +72,6 @@ import Caribbean from '../Menus/the_caribbean.js'
 
 	        	</NavDropdown>   	
 	    	</Navbar.Collapse>
-
 	  	</Navbar>
 
 	    <Switch>
@@ -106,10 +105,8 @@ import Caribbean from '../Menus/the_caribbean.js'
 							<li><a href="https://au.pinterest.com/search/pins/?q=food&rs=typed&term_meta[]=food%7Ctyped">Pinterest</a></li>
 							<li><Link to="/contact">Contact</Link></li>
 						</Col>
-
 				    </FormGroup>
 				</Form>
-				
 			</div>
 		</div>
 
