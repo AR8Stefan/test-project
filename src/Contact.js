@@ -16,36 +16,40 @@ import {
 	Button,
 	FormControl
 } from 'react-bootstrap'
+import './contact.css';
 
 const Contact = () => {
-	return <div>
+	return <div className="contact-form">
 		<h1>Contact Us.</h1>
 
-		<Form horizontal>
-		    <FormGroup controlId="formHorizontalEmail">
-		      	<Col componentClass={ControlLabel} sm={2}><p>Email</p>
-		      	</Col>
-		      	<Col sm={10}>
-		        	<FormControl className="inputField" type="email" placeholder="Email" />
-		      	</Col>
-		    	</FormGroup>
+		<div className="test">
+			<Form horizontal>
+			    <FormGroup controlId="formHorizontalEmail">
+			      	<Col componentClass={ControlLabel} sm={2}><p>Email</p>
+			      	</Col>
+			      	<Col sm={10}>
+			        	<FormControl className="inputField" type="email" placeholder="Email" />
+			      	</Col>
+			    	</FormGroup>
 
-		    	<FormGroup controlId="formHorizontalQuery">
-		      	<Col componentClass={ControlLabel} sm={2}><p>Submit Your Query</p>
-		      	</Col>
-		      	<Col sm={10}>
-		        <FormControl className="inputField" type="text" placeholder="Submit Your Query" />
-		      	</Col>
-		    	</FormGroup>
+			    	<FormGroup controlId="formHorizontalQuery">
+			      	<Col componentClass={ControlLabel} sm={2}><p>Submit Your Query</p>
+			      	</Col>
+			      	<Col sm={10}>
 
-		    	<FormGroup>
-		      		<Col smOffset={2} sm={10}>
-		        		<Button type="submit">
-		          		Submit
-		        		</Button>
-		      		</Col>
-		    	</FormGroup>
-		  	</Form>
+			        <FormControl className="inputField" type="text" placeholder="Submit Your Query" />
+			      	</Col>
+			    	</FormGroup>
+
+			    	<FormGroup>
+			      		<Col smOffset={2} sm={10}>
+			        		<Button type="submit">
+			          		Submit
+			        		</Button>
+			      		</Col>
+			    	</FormGroup>
+			  	</Form>
+			</div>
 	</div>
 }
 

@@ -13,10 +13,10 @@ import './App.css';
 // import { Button } from 'react-bootstrap'
 
 
-// const AnyReactComponent = ({text}) => (
+// const MapMarkers = ({text}) => (
   
-//   <GoogleMapMarkers className="Marker" onClick={this.burgerToggle}><Link className="LinkText" to="/menus/mainmenu"><Button>{text}</Button></Link>
-//   </GoogleMapMarkers>
+//   <MapMarker className="Marker">
+//   </MapMarker>
 
 // );
 

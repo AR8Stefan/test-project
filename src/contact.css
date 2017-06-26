@@ -1,8 +1,8 @@
-div {
+.contact-form {
 	text-align: center;
+	height: 70vh;
 }
 
-.inputField {
-	text-align: center;
-	align-content: center;
+.test {
+	margin: 10px;
 }
