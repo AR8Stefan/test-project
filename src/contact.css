@@ -3,6 +3,11 @@
 	height: 70vh;
 }
 
+.button {
+	margin: 10px;
+	padding: 4px;
+}
+
 .test {
 	margin: 10px;
 }

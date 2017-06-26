@@ -43,7 +43,7 @@ const Contact = () => {
 
 			    	<FormGroup>
 			      		<Col smOffset={2} sm={10}>
-			        		<Button type="submit">
+			        		<Button type="submit" className="button">
 			          		Submit
 			        		</Button>
 			      		</Col>
