@@ -12,7 +12,6 @@ import {
 	FormGroup,
 	// FieldGroup,
 	ControlLabel,
-	// Checkbox,
 	Button,
 	FormControl
 } from 'react-bootstrap'

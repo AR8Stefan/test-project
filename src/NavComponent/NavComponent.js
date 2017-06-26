@@ -25,7 +25,7 @@ import {
 
 import Home from '../Home.js'
 import MainMenu from '../Menus/MainMenu.js'
-import Order from '../Order.js'
+import Order from '../components/App/Order.js'
 import Contact from '../Contact.js'
 // import MyMap from '../MyMap'
 
@@ -48,7 +48,7 @@ import Caribbean from '../Menus/the_caribbean.js'
     			<div className="wideDiv">
 		        	<NavItem onClick={this.burgerToggle}><Link to="/">Home</Link></NavItem>
 		        	<NavItem onClick={this.burgerToggle}><Link to="/menus/mainmenu">Menus</Link></NavItem>
-		        	<NavItem onClick={this.burgerToggle}><Link to="/order">Order</Link></NavItem>
+		        	<NavItem onClick={this.burgerToggle}><Link to="../components/App/Order.js">Order</Link></NavItem>
 		        	<NavItem onClick={this.burgerToggle}><Link to="/contact">Contact</Link></NavItem>
 		        </div>
 		    </Nav>
