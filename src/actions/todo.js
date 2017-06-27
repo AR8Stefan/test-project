@@ -1,8 +1,11 @@
 // import React, { Component } from 'react';
 import { getSectionsDB, addSection } from '../javascripts/firebase';
-// import _ from 'lodash';
+
+import Firebase from 'firebase';
+import _ from 'lodash';
 import actionType from 'constants';
 
+// const Posts = new Firebase('https://streetfood-f9d75.firebaseio.com');
 
 export const loadSections = () => {
   return dispatch => {

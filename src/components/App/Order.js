@@ -31,8 +31,7 @@ class Order extends Component {
 
         <form onSubmit={this.onSubmit} >
           <input ref={(input) => { this.textInput = input; }} />
-          <li>menu item</li>
-          <button>Add new section</button>
+          <button>Add</button>
         </form>
       </div>
     );
