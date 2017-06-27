@@ -1,7 +1,10 @@
-import React, {Component} from 'react';
-import {init as firebaseInit} from 'javascripts/firebase';
-import {browserHistory} from 'react-router';
+import React, { Component } from 'react';
+import { init as firebaseInit } from '../javascripts/firebase';
+import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes';
+import configureStore from './configureStore';
+import { Provider } from 'react-redux';
+import { syncHistoryWithStore } from 'react-router-redux';
 
 export default class Root extends Component {
   constructor(props) {
@@ -10,11 +13,11 @@ export default class Root extends Component {
     this.store = configureStore()
   }
 
-render() {
+	render() {
     return (
     	<Provider store={this.store}>
-      		<Routes history={browserHistory}/>
-      	</Provider>
+    		<Routes history={BrowserRouter}/>
+    	</Provider>
     )
   }
 }
