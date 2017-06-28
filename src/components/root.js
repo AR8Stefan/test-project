@@ -13,11 +13,11 @@ export default class Root extends Component {
     this.store = configureStore()
   }
 
-render() {
+	render() {
     return (
     	<Provider store={this.store}>
-      		<Routes history={browserHistory}/>
-      	</Provider>
+    		<Routes history={BrowserRouter}/>
+    	</Provider>
     )
   }
 }
