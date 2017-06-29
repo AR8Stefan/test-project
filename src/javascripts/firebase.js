@@ -5,7 +5,7 @@ import todoModel from './models/todo';
 import sectionModel from './models/section';
 
 
-let database
+let database;
 export const init = () => {
   let config = {
     apiKey: "AIzaSyAhJXZJzLBEcbcYLMXE_EzOTQpc9j6kayU",

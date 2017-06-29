@@ -1,5 +1,3 @@
-
-
 export default (id, name, timestamp) => {
   return {
     id: id,
@@ -7,6 +5,3 @@ export default (id, name, timestamp) => {
     timestamp: timestamp
   }
 }
-
-
-
