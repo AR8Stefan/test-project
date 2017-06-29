@@ -31,8 +31,9 @@ class Order extends Component {
   handleSelection(e) {
     console.log(e.target.value)
     this.setState({
-      value: e.target.value
+      value: e.target.meal
     });
+    this.props.selectedItem;
   }
 
   // componentDidMount() {
