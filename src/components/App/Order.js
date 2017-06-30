@@ -10,31 +10,74 @@ import './Order.css';
 
 // );
 
-// Setting default state for selected items.
+// Set default state for selected items.
 class Order extends Component {
   constructor(props) {
     super(props);
 
     this.menu = [
-      {name: "apple", price: 2},
-      {name: "orange", price: 4},
-      {name: "water", price: 10}
+      {name: "apple",
+       price: 2},
+      {name: "orange",
+       price: 4},
+      {name: "water",
+       price: 10}
     ]
 
     this.state = {
-      selectedItem: this.menu[0],
-      quantity: 1
+      selectedItemKey: 0,
+      quantity: 1,
+      price: 2
     }
   }
 
 // Reset/Update state when an item is selected.
-  handleSelection(e) {
-    console.log(e.target.value)
+  handleSelection(e, value, i) {
     this.setState({
-      value: e.target.meal
+      selectedItemKey: e.target.value
     });
-    this.props.selectedItem;
+    console.log(e.target.value);
   }
+
+  changeSelection(e) {
+    this.setState({
+      quantity: e.target.value
+    });
+  }
+
+  handleChange(e, value, i) {
+    this.setState({
+      price: e.target.value
+    });
+  }
+
+// Line.59: Select item in menu and show in Summary.
+// Line.65: Select number of menu items to purchase.
+// Line.69: Shows items selected and amount to be purchased.
+  render() {
+    return (
+      <div className="order-form">
+      	<h1>New Order</h1>
+
+        <h3>What would you like to order?</h3>
+        {this.menu.map((meal, i) =>
+          <button onClick={(e) => this.handleSelection(e)} value={i} key={i}>{meal.name} ${meal.price}</button>
+        )}
+
+        <h3>How many would you like?</h3>
+        <input type="number" onChange={(e) => this.changeSelection(e)} />
+
+        <h3>Summary</h3>
+        <p onChange={(e) => this.handleAmountChange(e)} >Item: {this.menu[this.state.selectedItemKey].name} <br/> Amount: x{this.state.quantity} <br/> Price: ${this.state.price}</p>
+       
+        <button>Submit</button>
+      </div>
+    );
+  }
+}
+
+export default Order;
+
 
   // componentDidMount() {
   //   // this.props.loadSections()
@@ -51,31 +94,3 @@ class Order extends Component {
   // }
 
 // <input ref={(input) => { this.textInput = input; }} />
-
-
-// Line.59: Select item in menu and show in Summary.
-// Line.65: Select number of menu items to purchase.
-// Line.69: Shows items selected and amount to be purchased.
-  render() {
-    return (
-      <div className="order-form">
-      	<h1>New Order</h1>
-
-        <h3>What would you like to order?</h3>
-        {this.menu.map((meal, i) =>
-          <button onClick={(e) => this.handleSelection(e)} value={meal} key={i}>{meal.name} ${meal.price}</button>
-        )}
-
-        <h3>How many would you like?</h3>
-        <input type="number" />
-
-        <h3>Summary</h3>
-        <p>{this.state.selectedItem.name.bind(this)} x{this.state.quantity} $$$</p>
-       
-        <button>Submit</button>
-      </div>
-    );
-  }
-}
-
-export default Order;
