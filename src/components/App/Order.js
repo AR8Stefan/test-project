@@ -16,18 +16,18 @@ class Order extends Component {
     super(props);
 
     this.menu = [
-      {name: "apple",
+      {name: "Apple",
        price: 2},
-      {name: "orange",
+      {name: "Orange",
        price: 4},
-      {name: "water",
+      {name: "Water",
        price: 10}
     ]
 
     this.state = {
       selectedItemKey: 0,
       quantity: 1,
-      price: 2
+      price: 0
     }
   }
 
@@ -45,9 +45,10 @@ class Order extends Component {
     });
   }
 
-  handleChange(e, value, i) {
+  handleAmountChange(e, i, value) {
     this.setState({
-      price: e.target.value
+      handleSelection: !this.state.handleSelection,
+      changeSelection: !this.state.changeSelection
     });
   }
 
@@ -68,7 +69,10 @@ class Order extends Component {
         <input type="number" onChange={(e) => this.changeSelection(e)} />
 
         <h3>Summary</h3>
-        <p onChange={(e) => this.handleAmountChange(e)} >Item: {this.menu[this.state.selectedItemKey].name} <br/> Amount: x{this.state.quantity} <br/> Price: ${this.state.price}</p>
+
+        <p>Item: {this.menu[this.state.selectedItemKey].name}</p>
+        <p>Amount: x{this.state.quantity}</p>
+        <p onChange={(e) => this.state.handleAmountChange(e)} >Price: ${this.menu[this.state.price].price}</p>
        
         <button>Submit</button>
       </div>
