@@ -6,7 +6,7 @@ import sectionModel from './models/section';
 
 
 let database;
-export const init = () => {
+export const configFB = () => {
   let config = {
     apiKey: "AIzaSyAhJXZJzLBEcbcYLMXE_EzOTQpc9j6kayU",
     authDomain: "streetfood-f9d75.firebaseapp.com",
@@ -15,7 +15,7 @@ export const init = () => {
     storageBucket: "streetfood-f9d75.appspot.com",
     messagingSenderId: "993553484350"
   }
-  firebase.initializeApp(config)
+  firebase.initializeApp(configFB)
   database = firebase.database()
 }
 

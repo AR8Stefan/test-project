@@ -74,7 +74,7 @@ class Order extends Component {
         <p>Amount: x{this.state.quantity}</p>
         <p onChange={(e) => this.state.handleAmountChange(e)} >Price: ${this.menu[this.state.price].price}</p>
        
-        <button>Submit</button>
+        <button type="submit" >Submit </button>
       </div>
     );
   }
