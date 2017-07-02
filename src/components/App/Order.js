@@ -27,12 +27,12 @@ class Order extends Component {
     this.state = {
       selectedItemKey: 0,
       quantity: 1,
-      price: 0
+      prices: 0
     }
   }
 
 // Reset/Update state when an item is selected.
-  handleSelection(e, value, i) {
+  handleSelection(e) {
     this.setState({
       selectedItemKey: e.target.value
     });
@@ -43,13 +43,16 @@ class Order extends Component {
     this.setState({
       quantity: e.target.value
     });
+    console.log(e.target.value);
   }
 
   handleAmountChange(e, i, value) {
     this.setState({
-      handleSelection: !this.state.handleSelection,
-      changeSelection: !this.state.changeSelection
+      // handleSelection: !this.state.handleSelection,
+      // changeSelection: !this.state.changeSelection
+      prices: e.target.value
     });
+    console.log(e.target.value);
   }
 
 // Line.59: Select item in menu and show in Summary.
@@ -72,7 +75,7 @@ class Order extends Component {
 
         <p>Item: {this.menu[this.state.selectedItemKey].name}</p>
         <p>Amount: x{this.state.quantity}</p>
-        <p onChange={(e) => this.state.handleAmountChange(e)} >Price: ${this.menu[this.state.price].price}</p>
+        <p onChange={(e) => this.handleAmountChange(e)} >Price: ${this.menu[this.state.prices].price}</p>
        
         <button type="submit" >Submit </button>
       </div>

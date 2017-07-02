@@ -20,14 +20,14 @@ const config = {
 //   .database()
 //   .ref();
 
-const App = (props) => {  
-  console.log('snapshot', props);
-  return (
-    <div>
-      <p>{JSON.stringify(props)}</p>
-    </div>
-  );
-}
+// const App = (props) => {  
+//   console.log('snapshot', props);
+//   return (
+//     <div>
+//       <p>{JSON.stringify(props)}</p>
+//     </div>
+//   );
+// }
 
 // fb.on('value', snapshot => {  
 //   const store = snapshot.val();
