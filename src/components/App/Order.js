@@ -2,22 +2,13 @@ import React, { Component } from 'react';
 import SectionList from './section-list.js';
 import { Button } from 'react-bootstrap'
 import * as firebase from 'firebase';
+import hat from 'hat';
 
 import './Order.css';
 
 // let database;
-export const configFB = () => {
-  let configFB = {
-    apiKey: "AIzaSyAhJXZJzLBEcbcYLMXE_EzOTQpc9j6kayU",
-    authDomain: "streetfood-f9d75.firebaseapp.com",
-    databaseURL: "https://streetfood-f9d75.firebaseio.com",
-    projectId: "streetfood-f9d75",
-    storageBucket: "streetfood-f9d75.appspot.com",
-    messagingSenderId: "993553484350"
-  }
-  firebase.initializeApp(configFB);
-
-  var database = firebase.database();
+export const config = () => {
+  
 }
 
 // Set default state for selected items.
@@ -39,6 +30,18 @@ class Order extends Component {
       quantity: 1,
       selectedPrice: 0
     }
+
+    let config = {
+      apiKey: "AIzaSyAhJXZJzLBEcbcYLMXE_EzOTQpc9j6kayU",
+      authDomain: "streetfood-f9d75.firebaseapp.com",
+      databaseURL: "https://streetfood-f9d75.firebaseio.com",
+      projectId: "streetfood-f9d75",
+      storageBucket: "streetfood-f9d75.appspot.com",
+      messagingSenderId: "993553484350"
+    }
+    firebase.initializeApp(config);
+
+    this.database = firebase.database();
   }
 
 // Reset/Update state when an item is selected.
@@ -61,16 +64,12 @@ class Order extends Component {
     const item = this.menu[this.state.selectedItemKey];
     const quantity = this.state.quantity;
     const price = this.menu[this.state.selectedPrice].price * this.state.quantity;
-
-    // send above to firebase realtime database
-    function writeUserData(userId, item, price, quantity) {
-      firebase.database().ref('users/' + userId).set({
-        name: item,
-        price: price,
-        quantity: quantity
-      });
-    }
-
+   
+    this.database.ref('orders/' + hat()).set({
+      item: item,
+      totalPrice: price,
+      quantity: quantity
+    });
   }
 
 // Line.59: Select item in menu and show in Summary.
