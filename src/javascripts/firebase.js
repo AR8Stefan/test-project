@@ -50,14 +50,3 @@ export const addTodoItem = (id, name) => {
     })
   })
 }
-
-
-
-
-
-
-
-
-
-
-

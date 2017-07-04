@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
 import SectionList from './section-list.js';
 import { Button } from 'react-bootstrap'
+import * as firebase from 'firebase';
 
 import './Order.css';
 
-// const MenuItem = ({text}) => (
+// let database;
+export const configFB = () => {
+  let configFB = {
+    apiKey: "AIzaSyAhJXZJzLBEcbcYLMXE_EzOTQpc9j6kayU",
+    authDomain: "streetfood-f9d75.firebaseapp.com",
+    databaseURL: "https://streetfood-f9d75.firebaseio.com",
+    projectId: "streetfood-f9d75",
+    storageBucket: "streetfood-f9d75.appspot.com",
+    messagingSenderId: "993553484350"
+  }
+  firebase.initializeApp(configFB);
 
-//   <Button>{text}</Button>
-
-// );
+  var database = firebase.database();
+}
 
 // Set default state for selected items.
 class Order extends Component {
@@ -27,14 +37,15 @@ class Order extends Component {
     this.state = {
       selectedItemKey: 0,
       quantity: 1,
-      prices: 0
+      selectedPrice: 0
     }
   }
 
 // Reset/Update state when an item is selected.
   handleSelection(e) {
     this.setState({
-      selectedItemKey: e.target.value
+      selectedItemKey: e.target.value,
+      selectedPrice: e.target.value
     });
     console.log(e.target.value);
   }
@@ -46,13 +57,20 @@ class Order extends Component {
     console.log(e.target.value);
   }
 
-  handleAmountChange(e, i, value) {
-    this.setState({
-      // handleSelection: !this.state.handleSelection,
-      // changeSelection: !this.state.changeSelection
-      prices: e.target.value
-    });
-    console.log(e.target.value);
+  sendData() {
+    const item = this.menu[this.state.selectedItemKey];
+    const quantity = this.state.quantity;
+    const price = this.menu[this.state.selectedPrice].price * this.state.quantity;
+
+    // send above to firebase realtime database
+    function writeUserData(userId, item, price, quantity) {
+      firebase.database().ref('users/' + userId).set({
+        name: item,
+        price: price,
+        quantity: quantity
+      });
+    }
+
   }
 
 // Line.59: Select item in menu and show in Summary.
@@ -71,13 +89,15 @@ class Order extends Component {
         <h3>How many would you like?</h3>
         <input type="number" onChange={(e) => this.changeSelection(e)} />
 
+
         <h3>Summary</h3>
 
         <p>Item: {this.menu[this.state.selectedItemKey].name}</p>
         <p>Amount: x{this.state.quantity}</p>
-        <p onChange={(e) => this.handleAmountChange(e)} >Price: ${this.menu[this.state.prices].price}</p>
+
+        <p onChange={(e) => this.handlePriceChange(e)}>Total Price: ${this.menu[this.state.selectedPrice].price * this.state.quantity}</p>        
        
-        <button type="submit" >Submit </button>
+        <button onClick={this.sendData.bind(this)} type="submit" >Submit </button>
       </div>
     );
   }
