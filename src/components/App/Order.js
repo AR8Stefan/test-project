@@ -6,10 +6,15 @@ import hat from 'hat';
 
 import './Order.css';
 
+const imgUrl = 'http://res.cloudinary.com/stefank9/image/upload/v1499136293/patternGray_hz5mma.jpg';
+    const backgroundImg = {
+      backgroundImage: `url(${imgUrl} )`,
+      // backgroundSize: 'cover',
+      // overflow: 'hidden',
+    }
+
 // let database;
-export const config = () => {
-  
-}
+
 
 // Set default state for selected items.
 class Order extends Component {
@@ -72,17 +77,22 @@ class Order extends Component {
     });
   }
 
+  // userId = firebase.auth().currentUser.uid;
+  //   return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+  //   var username = snapshot.val().username;
+  // });
+
 // Line.59: Select item in menu and show in Summary.
 // Line.65: Select number of menu items to purchase.
 // Line.69: Shows items selected and amount to be purchased.
   render() {
     return (
-      <div className="order-form">
+      <div className="order-form" style={ backgroundImg }>
       	<h1>New Order</h1>
 
         <h3>What would you like to order?</h3>
         {this.menu.map((meal, i) =>
-          <button onClick={(e) => this.handleSelection(e)} value={i} key={i}>{meal.name} ${meal.price}</button>
+          <button className="Button" onClick={(e) => this.handleSelection(e)} value={i} key={i}>{meal.name} ${meal.price}</button>
         )}
 
         <h3>How many would you like?</h3>
@@ -96,7 +106,14 @@ class Order extends Component {
 
         <p onChange={(e) => this.handlePriceChange(e)}>Total Price: ${this.menu[this.state.selectedPrice].price * this.state.quantity}</p>        
        
-        <button onClick={this.sendData.bind(this)} type="submit" >Submit </button>
+        <button className="Button submit" onClick={this.sendData.bind(this)} type="submit" >Submit </button>
+
+        <hr/>
+
+        <div>
+          <h1>What You Ordered</h1>
+          <p></p>
+        </div>
       </div>
     );
   }

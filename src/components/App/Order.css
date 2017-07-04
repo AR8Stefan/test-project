@@ -1,5 +1,15 @@
 .order-form {
-	height: 160vh;
+	height: 100vh;
 	text-align: center;
 	margin: 10px;
 }
+
+.Button {
+	margin: 10px;	
+}
+
+.submit {
+	margin-bottom: 1.2rem;
+}
+
+@import url('http://res.cloudinary.com/stefank9/image/upload/v1499136293/patternGray_hz5mma.jpg')
