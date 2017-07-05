@@ -17,7 +17,7 @@ h1, h2, h3, thead, th {
 	font-family: TrashHand;
 }
 
-p, .Button {
+p, .Button, li, input {
 	text-align: center;
 	font-family: OpenSans;
 }
