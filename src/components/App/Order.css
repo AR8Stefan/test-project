@@ -8,7 +8,7 @@
 	width: 2rem;
 }
 
-li {
+.data-items {
 	padding: 10px;
 	padding-bottom: 20px;
 	display: inline-flex;
