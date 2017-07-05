@@ -123,7 +123,10 @@ class Order extends Component {
           </Grid>
 
         <h3>How many would you like?</h3>
-        <input className="quantity" type="number" onChange={(e) => this.changeSelection(e)} />
+        
+        <div>
+          Qty: <input className="quantity" type="number" onChange={(e) => this.changeSelection(e)} />
+        </div>
 
           <h3>Summary</h3>
           <p>Item: {this.menu[this.state.selectedItemKey].name}</p>
