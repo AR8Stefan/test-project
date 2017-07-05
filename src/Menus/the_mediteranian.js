@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import ReactDOM from 'react-dom';
-import Counter from './counter.js'
-import appState from './counter.js'
+
 import { Button } from 'react-bootstrap';
 // import Home from '../Home.js'
 
-class MenuItems extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			// item: 'text',
-			// price: ,
-			// quantity: 
-			count: 0
-		};
-		this.incrementCount = this.incrementCount.bind(this);
-		this.decrementCount = this.decrementCount.bind(this);
-	}
-}
+// class MenuItems extends Component {
+// 	constructor(props) {
+// 		super(props);
+// 		this.state = {
+// 			// item: 'text',
+// 			// price: ,
+// 			// quantity: 
+// 			count: 0
+// 		};
+// 		this.incrementCount = this.incrementCount.bind(this);
+// 		this.decrementCount = this.decrementCount.bind(this);
+// 	}
+// }
 
 // incCount() {
 // 	this.setState({

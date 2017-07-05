@@ -6,14 +6,14 @@ import './index.css';
 import NavComponent from './NavComponent/NavComponent.js';
 
 // Make sure you swap this out with your Firebase app's config
-const config = {  
-  apiKey: "AIzaSyAhJXZJzLBEcbcYLMXE_EzOTQpc9j6kayU",
-  authDomain: "streetfood-f9d75.firebaseapp.com",
-  databaseURL: "https://streetfood-f9d75.firebaseio.com",
-  projectId: "streetfood-f9d75",
-  storageBucket: "streetfood-f9d75.appspot.com",
-  messagingSenderId: "993553484350"
-};
+// const config = {  
+//   apiKey: "AIzaSyAhJXZJzLBEcbcYLMXE_EzOTQpc9j6kayU",
+//   authDomain: "streetfood-f9d75.firebaseapp.com",
+//   databaseURL: "https://streetfood-f9d75.firebaseio.com",
+//   projectId: "streetfood-f9d75",
+//   storageBucket: "streetfood-f9d75.appspot.com",
+//   messagingSenderId: "993553484350"
+// };
 
 // const fb = firebase  
 //   .initializeApp(config)

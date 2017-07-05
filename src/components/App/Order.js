@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import SectionList from './section-list.js';
-import { Button } from 'react-bootstrap'
+import {
+  Button,
+  Grid,
+  Col,
+  Row
+} from 'react-bootstrap'
 import * as firebase from 'firebase';
 import hat from 'hat';
 
@@ -33,7 +37,8 @@ class Order extends Component {
     this.state = {
       selectedItemKey: 0,
       quantity: 1,
-      selectedPrice: 0
+      selectedPrice: 0,
+      orders: [{totalPrice: 10, quantity: 10, item: {name: 'hi'}}]
     }
 
     let config = {
@@ -48,6 +53,7 @@ class Order extends Component {
 
     this.database = firebase.database();
   }
+
 
 // Reset/Update state when an item is selected.
   handleSelection(e) {
@@ -77,6 +83,18 @@ class Order extends Component {
     });
   }
 
+  componentDidMount() {
+    let orders = [];
+    this.database.ref('orders/').on('value', (snapshot) => {
+      snapshot.forEach((child) => {
+        orders.push(child.val())
+      })
+    })
+    this.setState({
+      orders: orders
+    })
+  };
+
   // userId = firebase.auth().currentUser.uid;
   //   return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
   //   var username = snapshot.val().username;
@@ -91,28 +109,35 @@ class Order extends Component {
       	<h1>New Order</h1>
 
         <h3>What would you like to order?</h3>
-        {this.menu.map((meal, i) =>
-          <button className="Button" onClick={(e) => this.handleSelection(e)} value={i} key={i}>{meal.name} ${meal.price}</button>
-        )}
+
+          <Grid>
+            <Row>
+              <div className="menu-items">
+                {this.menu.map((meal, i) =>
+                  <Col sm={12}>
+                  <Button colSpan="8" className="Button menu-button" onClick={(e) => this.handleSelection(e)} value={i} key={i}>{meal.name} | ${meal.price}</Button>
+                  </Col>
+                )}
+              </div>
+            </Row>
+          </Grid>
 
         <h3>How many would you like?</h3>
-        <input type="number" onChange={(e) => this.changeSelection(e)} />
+        <input className="quantity" type="number" onChange={(e) => this.changeSelection(e)} />
 
-
-        <h3>Summary</h3>
-
-        <p>Item: {this.menu[this.state.selectedItemKey].name}</p>
-        <p>Amount: x{this.state.quantity}</p>
-
-        <p onChange={(e) => this.handlePriceChange(e)}>Total Price: ${this.menu[this.state.selectedPrice].price * this.state.quantity}</p>        
-       
-        <button className="Button submit" onClick={this.sendData.bind(this)} type="submit" >Submit </button>
+          <h3>Summary</h3>
+          <p>Item: {this.menu[this.state.selectedItemKey].name}</p>
+          <p>Amount: x{this.state.quantity}</p>
+          <p onChange={(e) => this.handlePriceChange(e)}>Total Price: ${this.menu[this.state.selectedPrice].price * this.state.quantity}</p>        
+          <Button className="Button submit" onClick={this.sendData.bind(this)} type="submit" >Submit </Button>
 
         <hr/>
 
         <div>
-          <h1>What You Ordered</h1>
-          <p></p>
+          <h1>Orders</h1>
+            {Object.values(this.state.orders).map((order, i) =>
+              <li key={i}>{order.item.name} x{order.quantity} = ${order.totalPrice}</li>
+            )}
         </div>
       </div>
     );

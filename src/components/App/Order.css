@@ -1,7 +1,25 @@
 .order-form {
-	height: 100vh;
+	/*height: 100vh;*/
 	text-align: center;
 	margin: 10px;
+}
+
+.quantity {
+	width: 30px;
+}
+
+li {
+	padding: 10px;
+}
+
+.menu-items {
+
+}
+
+.menu-button {
+	width: 80vw;
+	height: 30px;
+	font-size: 1rem;
 }
 
 .Button {
