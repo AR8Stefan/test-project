@@ -136,7 +136,7 @@ class Order extends Component {
         <div>
           <h1>Orders</h1>
             {Object.values(this.state.orders).map((order, i) =>
-              <li key={i}>{order.item.name} x{order.quantity} = ${order.totalPrice}</li>
+              <li colSpan="8" key={i}>{order.item.name} x{order.quantity} = ${order.totalPrice}</li>
             )}
         </div>
       </div>

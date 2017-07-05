@@ -10,6 +10,9 @@
 
 li {
 	padding: 10px;
+	padding-bottom: 20px;
+	display: inline-flex;
+	width: 30vw;
 }
 
 .menu-items {
